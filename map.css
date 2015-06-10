@@ -1,0 +1,313 @@
+/* The first two rules are taken from this article on CSS-Tricks about current best practices
+ * for box sizing: https://css-tricks.com/box-sizing/. If best practices have since changed, 
+ * I welcome feedback.
+ */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue", sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	text-align: center;
+	width: 85vw;
+	margin: auto;
+	padding: 1vh 0;
+	font-size: 40px;
+	font-weight: 300;
+	flex: 0;
+}
+
+.subtitle {
+	font-size: 24px;
+}
+
+.purple {
+	color: #855285;
+}
+
+.blue {
+	color: skyblue;
+}
+
+hr {
+	width: 85vw;
+	margin: 0 auto;
+}
+
+main {
+	width: 85vw;
+	margin: auto;
+	overflow: auto;
+	flex: 1;
+}
+
+.interactive-map {
+	height: 55vh;
+}
+
+.hamburger-menu {
+	display: none;
+}
+
+input[type=search] {
+	text-align: center;
+	margin: 1vh 21.1225vw 0;
+	width: 50%;
+	font-size: 20px;
+	clear: both;
+}
+
+/* The ui-prefixed selectors target the autocomplete functionality. */
+.ui-autocomplete {
+	margin: 0 21.1225vw;
+	width: 50vw;
+}
+
+.ui-menu {
+	width: 42.5vw;
+	text-align: center;
+	background-color: #aacdff;
+	padding-top: .5vh;
+	position: fixed;
+	border-radius: 5px;
+	z-index: 2;
+}
+
+.ui-menu-item {
+	font-size: 14px;
+	margin-bottom: .5vh;
+	color: #fff;
+}
+
+.ui-menu-item:hover {
+	color: #fff;
+}
+
+.ui-state-focus {
+	background-color: #855285;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.places {
+	display: inline-block;
+	width: 24%;
+	height: 90%;
+	margin: 1vh 0;
+	overflow: auto;
+	vertical-align: top;
+}
+
+.places p {
+	width: 80%;
+	margin: auto;
+	padding-bottom: 5vh;
+	color: #000;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: auto;
+	width: 75%;
+}
+
+li {
+	margin-bottom: 5%;
+}
+
+li:hover {
+	color: pink;
+	cursor: pointer;
+}
+
+/* I use an id here and for articles because the map needs to pull from the #map element
+ * and the Wikipedia function needs to pull from the #articles element. */
+#map {
+	display: inline-block;
+	width: 75%;
+	height: 90%;
+	margin: 1vh 0;
+}
+
+.info-content {
+	color: #000;
+	max-width: 300px;
+}
+
+.info-content h3 {
+	font-weight: 300;
+}
+
+.info-content img {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.info-content a {
+	color: blue;
+	margin-top: 100px;
+}
+
+#articles {
+	width: 100%;
+	margin-top: 1vh;
+}
+
+.heading {
+	width: 85%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 24px;
+	font-weight: 300;
+}
+
+article {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.wiki-title {
+	font-weight: bold;
+}
+
+.wiki-link {
+	margin-bottom: 1vh;
+}
+
+.wiki-link a {
+	text-decoration: none;
+}
+
+.wiki-error {
+	text-align: center;
+	margin-top: 1vh;
+	font-size: 20px;
+}
+
+article hr {
+	width: 100%;
+}
+
+footer {
+	text-align: center;
+	width: 85vw;
+	margin: 0 7.5vw;
+	color: #000;
+	flex: 2;
+}
+
+@media screen and (max-width: 800px) {
+
+	header {
+		font-size: 20px;
+	}
+
+	.subtitle {
+		display: none;
+	}
+
+	.interactive-map {
+		height: 55vh;
+	}
+
+	.hamburger-menu {
+		display: block;
+		color: #855285;
+		position: fixed;
+		margin-top: 1vh;
+	}
+
+	.hamburger-menu:hover {
+		cursor: pointer;
+	}
+
+	input[type=search] {
+		margin: 1vh 21.1225vw 0;
+		width: 50%;
+		font-size: 14px;
+		clear: both;
+	}
+
+	section {
+		margin-bottom: 3vh;
+	}
+
+	.places {
+		font-size: 14px;
+		width: 50%;
+		height: 50%;
+		overflow: auto;
+		transform: translateX(-110%);
+		position: fixed;
+		background-color: #fff;
+		color: #000;
+		z-index: 1;
+		-webkit-transition: -webkit-transform 0.6s;
+		transition: transform 0.6s;
+	}
+
+	.shown {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+	.places p {
+		width: 100%;
+		margin: 0;
+		padding-bottom: 3vh;
+	}
+
+	ul {
+		margin: 0;
+	}
+
+	li:hover {
+		color: #855285;
+	}
+
+	#map {
+		width: 100%;
+		height: 95%;
+	}
+
+	.info-content h3 {
+		font-size: 12px;
+	}
+
+	li {
+		margin-bottom: 2%;
+	}
+
+	.heading {
+		margin-top: 3vh;
+		font-size: 18px;
+		text-align: left;
+		margin: 0;
+	}
+
+	article {
+		font-size: 14px;
+		margin: 0;
+	}
+}

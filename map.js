@@ -212,21 +212,21 @@ window.initializeMap = function () {
 		openStatus.push(opened);
 
 		google.maps.event.addListener(marker, 'click', function(e) {
-			if (openStatus[thisIndex] === true) {
-				infoWindow.close();
-			}
-			if (openStatus[thisIndex] === false) {
-				infoWindow.open(map, marker);
-			}
 			// Close any open info windows
 			for (var i = 0; i < 9; i++) {
 				if (i === thisIndex) {
 					continue;
 				}
-				if (openStatus[i] === true) {
+				if (openStatus[i]) {
 					infoWindows[i].close();
 					openStatus[i] = false;
 				}
+			}
+
+			if (!openStatus[thisIndex]) {
+				infoWindow.open(map, marker);
+			} else if (openStatus[thisIndex]) {
+				infoWindow.close();
 			}
 
 			openStatus[thisIndex] = !openStatus[thisIndex];

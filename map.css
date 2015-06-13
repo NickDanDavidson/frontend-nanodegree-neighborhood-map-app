@@ -240,6 +240,7 @@ footer {
 		color: #855285;
 		position: fixed;
 		margin-top: 1vh;
+		/* TODO: Make menu and hamburger icon stay at top */
 	}
 
 	.hamburger-menu:hover {

@@ -238,7 +238,7 @@ footer {
 	.hamburger-menu {
 		display: block;
 		color: #855285;
-		position: fixed;
+		position: absolute;
 		margin-top: 1vh;
 		/* TODO: Make menu and hamburger icon stay at top */
 	}
@@ -265,7 +265,7 @@ footer {
 		overflow: auto;
 		-webkit-transform: translateX(-120%);
 		transform: translateX(-120%);
-		position: fixed;
+		position: absolute;
 		background-color: #fff;
 		color: #000;
 		z-index: 1;

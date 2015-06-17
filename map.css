@@ -34,6 +34,7 @@ header {
 	padding: 1vh 0;
 	font-size: 40px;
 	font-weight: 300;
+	-webkit-flex: 0;
 	flex: 0;
 }
 
@@ -240,7 +241,6 @@ footer {
 		color: #855285;
 		position: absolute;
 		margin-top: 1vh;
-		/* TODO: Make menu and hamburger icon stay at top */
 	}
 
 	.hamburger-menu:hover {
